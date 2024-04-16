@@ -20,7 +20,7 @@ Product list
     <div class="card-body">
       <h5 class="card-title">{{ product.title }}</h5>
       <p class="card-text">
-        {{ product.info }}
+        {{ product.info|truncatewords:10 }}
       </p>
       <p class="card-text">
        Price: {{ product.price }}
