@@ -1,4 +1,5 @@
 {% extends 'store/index.html' %} 
+
 {% block title %} 
 Product list
 {% endblock title %}
@@ -9,7 +10,7 @@ Product list
   {% for product in products %}   
   
   <div class="card">
-    <a href="./product_detail/product_detail.html">
+    <a href="{% url 'product_detail_url' pk=product.pk %}">
       <img
         src="https://www.pngmart.com/files/22/Land-Rover-Range-Rover-PNG-Clipart.png"
         class="card-img-top"
