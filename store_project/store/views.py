@@ -24,3 +24,17 @@ def product_detail(request, pk):
             'product': product,
             'categories': categories 
         })
+
+def category_detail(request, pk):
+        categories = Category.objects.all()
+        category = Category.objects.get(pk=pk)
+        products = category.products.all()
+        return render(
+            request,
+            'store/category_detail.html',
+            context={
+                'product_list':build_template(products, 3),
+                'category': category,
+                'categories': categories       
+            }
+        )

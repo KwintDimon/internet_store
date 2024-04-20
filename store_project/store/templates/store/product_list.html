@@ -5,40 +5,5 @@ Product list
 {% endblock title %}
 
 {% block content %}
-{% for products in product_list %} 
-<div class="card-group">
-  {% for product in products %}   
-  
-  <div class="card">
-    <a href="{% url 'product_detail_url' pk=product.pk %}">
-      <img
-        src="https://www.pngmart.com/files/22/Land-Rover-Range-Rover-PNG-Clipart.png"
-        class="card-img-top"
-        alt="Range Rover"
-      />
-    </a>
-
-    <div class="card-body">
-      <h5 class="card-title">{{ product.title }}</h5>
-      <p class="card-text">
-        {{ product.info|truncatewords:10 }}
-      </p>
-      <p class="card-text">
-       Price: {{ product.price }}
-      </p>
-
-      <ul class="category_list">
-        {% for category in product.categories.all %}
-        <li>
-          <a href="">{{ category.title }}</a>
-        </li>        
-        {% endfor %}
-      </ul>
-    </div>
-  </div>  
-
-  
-  {% endfor  %}
-</div>
-{% endfor  %}
+{% include 'store/includes/card_group.html' %}
 {% endblock content %}
