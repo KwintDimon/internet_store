@@ -28,15 +28,16 @@ Product list
       </p>
 
       <ul class="category_list">
+        {% for category in product.categories.all %}
         <li>
-          <a href="">Sport</a>
-        </li>
-        <li>
-          <a href="">Crossower</a>
-        </li>
+          <a href="">{{ category.title }}</a>
+        </li>        
+        {% endfor %}
       </ul>
     </div>
   </div>  
+
+  
   {% endfor  %}
 </div>
 {% endfor  %}

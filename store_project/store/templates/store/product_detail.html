@@ -52,7 +52,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Product title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{product.title }}</h1>
         <button
           type="button"
           class="btn-close"
@@ -86,6 +86,7 @@
               We'll never share your email with anyone else.
             </div>
           </div>
+          <input type="hidden" name="product_id" value="{{product.id }}" readonly>
 
           <button type="submit" class="btn btn-success">Order</button>
         </form>
