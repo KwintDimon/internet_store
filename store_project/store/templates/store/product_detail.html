@@ -8,9 +8,7 @@
 {% block content %}
 <div class="card">
   <img
-    src="https://www.pngmart.com/files/22/Land-Rover-Range-Rover-PNG-Clipart.png"
-    class="card-img-top"
-    alt="Range Rover"
+    {% include 'store/includes/image.html' %}
   />
   <div class="card-body">
     <h5 class="card-title">{{ product.title }}</h5>
@@ -24,7 +22,7 @@
       <ul class="category_list">
         {% for category in product.categories.all %}
         <li>
-          <a href="{% url 'category_detail_url' pk=category.pk %}">{{ category.title }}</a>
+          <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
         </li>        
         {% endfor %}
       </ul>
