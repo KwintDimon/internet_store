@@ -58,7 +58,8 @@
         ></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form method="post" action="">
+          {% csrf_token %}
           <div class="mb-3">
             <label for="user_name" class="form-label">Your Name</label>
             <input

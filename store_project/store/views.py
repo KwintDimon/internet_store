@@ -15,6 +15,8 @@ def product_list(request):
             |
             Q(info__icontains=search_query)
         )
+    else:
+        products = Product.objects.all()    
     return render(
         request,
         'store/product_list.html',
