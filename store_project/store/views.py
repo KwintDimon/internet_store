@@ -28,7 +28,7 @@ def product_list(request):
 
 def product_detail(request, pk):
         categories = Category.objects.all()
-        product = Product.objects.get(pk=pk)
+        product = Product.objects.get(pk=pk)        
         return render(request, 'store/product_detail.html', context={
             'product': product,
             'categories': categories 
@@ -47,3 +47,19 @@ def category_detail(request, pk):
                 'categories': categories       
             }
         )
+
+def save_order(request):
+    categories = Category.objects.all()
+    products = Product.objects.all()    
+    order = Order()
+    order.name = request.POST['user_name']
+    order.email = request.POST['user_email']
+    order.product = Product.objects.get(pk=request.POST['product_id'])
+    order.save() 
+    return render(
+        request,
+        'store/order.html',
+        context={            
+            'categories': categories
+            }
+    )
