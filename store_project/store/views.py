@@ -6,7 +6,7 @@ from .utils import CategoriesMixin
 # from django.http import HttpResponse
 
 
-# def work(request):
+
     #create product
     # p = Product(title='Ford', price=2000)
     # p.save()
@@ -17,9 +17,7 @@ from .utils import CategoriesMixin
     # print(obj)
     
 
-    # Update
-    # obj = Product.objects.get(pk=1)
-    # print(obj.price)
+    
 
     # DELETE
     # obj = Product.objects.get(pk=1).delete
@@ -58,7 +56,7 @@ from .utils import CategoriesMixin
     
     # print(o)
 
-    # return HttpResponse('Hello')
+
 
 
 class HomeView(ListView, CategoriesMixin):
